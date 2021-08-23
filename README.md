@@ -20,9 +20,32 @@
 
     Read more about how Gatsby handles `.env` files and environment variables in the [Gatsby Docs](https://www.gatsbyjs.com/docs/how-to/local-development/environment-variables/)
 
+2. **Get Twilio Credentials*
+
+    Create an account on [Twilio](https://twilio.com) and create a phone number. You'll need:
+
+    - `TWILIO_SID`: the Twilio account ID found on the dashboard
+    - `TWILIO_TOKEN`: a secret token also found on the dashboard
+    - `TWILIO_NUMBER`: a phone number you buy under the Phone Numbers page (free during trial), this is the number you'll send from
+
+    - `NUMBERS_TO_NOTIFY`: list of comma separated phone numbers to text when an email is sent
+
+3. **Get Firestore Credentials**
+
+    Create a new Firebase application then create a database (in test mode for simplicity). Under Project Settings, create a service account. You'll get a JSON with a bunch of data.
+
+    Stringify it into the `FIREBASE_SERVICE_ACCOUNT` env var.
+
+    You can run this code in Node.js to do that:
+
+    ```
+    const json = require('./file-name.json')
+    JSON.stringify(json)
+    ```
+
     You'll also want to add these as environment variables when deploying to Gatsby Cloud. Don't forget to add them to the Preview variables if you plan to add a CMS preview integration.
 
-2.  **Start developing.**
+4.  **Start developing.**
 
     To get started, run `npm install` to install all necessary packages.
 
@@ -32,12 +55,12 @@
     npm run develop
     ```
 
-3.  **Open the code and start customizing!**
+5.  **Open the code and start customizing!**
 
     Your site is now running at http://localhost:8000! You can use the UI on the index page to test the functions or directly access them at http://localhost:8000/api/sendgrid
 
     Edit `src/pages/index.js` to see your site update in real-time!
 
-4.  **Deploy**
+6.  **Deploy**
 
 You can deploy this example on Gatsby Cloud by copying the example into a new repo and [connecting that to Gatsby Cloud](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/deploying-to-gatsby-cloud/#set-up-an-existing-gatsby-site).

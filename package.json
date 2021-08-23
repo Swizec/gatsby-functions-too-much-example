@@ -16,9 +16,11 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^7.4.2",
+    "firebase-admin": "^9.11.1",
     "gatsby": "next",
     "gatsby-plugin-gatsby-cloud": "next",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "twilio": "^3.67.0"
   }
 }
